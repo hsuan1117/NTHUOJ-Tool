@@ -1,0 +1,25 @@
+{
+  "name": "NTHUOJ 助手",
+  "version": "0.0.0.1",
+  "manifest_version": 3,
+  "description": "好用的 NTHUOJ 小工具",
+  "icons": {
+    "16": "icons/nasapod16x16.png",
+    "32": "icons/nasapod32x32.png",
+    "48": "icons/nasapod48x48.png",
+    "128": "icons/nasapod128x128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+          "https://acm.cs.nthu.edu.tw/contest/*"
+      ],
+        "js": [
+            "thirdParty/jquery-3.6.3.min.js",
+            "thirdParty/moment.min.js",
+            "thirdParty/zh-tw.min.js",
+            "inject.js"
+      ]
+    }
+  ]
+}
