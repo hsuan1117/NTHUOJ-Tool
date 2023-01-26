@@ -29,10 +29,10 @@ function writeMain(push = true) {
     if(push)fetchData()
 }
 
-function fetchData() {
+function fetchData(force = false) {
     const username = $('#name-text')
     if(username.length === 0) return;
-    if(Date.now() - last_time < 60 * 1000) return;
+    if(Date.now() - last_time < 60 * 1000 && !force) return;
     need_refetch.forEach(prob => {
         fetch(`https://acm.cs.nthu.edu.tw/status/?username=${username.text()}&pid=${prob}&cid=&status=AC`).then(res=>res.text()).then(data=>{
             if(data.indexOf("No submissions found for the given query!") > -1) {
@@ -65,7 +65,8 @@ function makeButton() {
     li.css("cursor", "pointer")
     li.attr("role", "presentation")
     li.click(()=>{
-        fetchData()
+        alert("refresh")
+        fetchData(true)
         writeMain()
         writeDropdown()
     })
