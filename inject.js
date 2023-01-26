@@ -64,10 +64,15 @@ function makeButton() {
     const li = $("<li></li>")
     li.css("cursor", "pointer")
     li.attr("role", "presentation")
-    li.click(fetchData)
+    li.click(()=>{
+        fetchData()
+        writeMain()
+        writeDropdown()
+    })
     li.append("<a>Refresh</a>")
     $("#contest_tab").append(li)
 }
 
 writeMain()
+writeDropdown()
 makeButton()
