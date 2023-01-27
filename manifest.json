@@ -12,13 +12,15 @@
   "content_scripts": [
     {
       "matches": [
-          "https://acm.cs.nthu.edu.tw/contest/*"
+          "https://acm.cs.nthu.edu.tw/contest/*",
+          "https://acm.cs.nthu.edu.tw/users/submit/*"
       ],
         "js": [
             "thirdParty/jquery-3.6.3.min.js",
             "thirdParty/moment.min.js",
             "thirdParty/zh-tw.min.js",
-            "inject.js"
+            "inject.js",
+            "submit.js"
       ]
     }
   ]

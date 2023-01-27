@@ -74,6 +74,9 @@ function makeButton() {
     $("#contest_tab").append(li)
 }
 
-writeMain()
-writeDropdown()
-makeButton()
+// init
+if(location.href.startsWith("https://acm.cs.nthu.edu.tw/contest/")){
+    writeMain()
+    writeDropdown()
+    makeButton()
+}
