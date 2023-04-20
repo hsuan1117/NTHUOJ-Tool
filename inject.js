@@ -50,7 +50,7 @@ function fetchData(force = false) {
 function writeDropdown() {
     $("#contest_tab > li.dropdown > ul > li > a").each((i,elem)=>{
         const prob = /\d+/.exec(elem.href.split("#")[1])[0]
-        elem.textContent = statusEmoji[status[prob]] + elem.textContent.replace("🟢 ", "").replace("🔴 ","")
+        elem.textContent = statusEmoji[status[prob]] + (elem.textContent.replace("🟢 ", "").replace("🔴 ","") ?? "")
         elem.style.color = statusColor[status[prob]]
     })
 }
